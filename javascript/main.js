@@ -59,11 +59,10 @@ const signs = [
 		range: "December 22 - January 19",
 		horoscope: "Capricorn is a sign that represents time and responsibility, and its representatives are traditional and often very serious by nature. These individuals possess an inner state of independence that enables significant progress both in their personal and professional lives. They are masters of self-control and have the ability to lead the way, make solid and realistic plans, and manage many people who work for them at any time. They will learn from their mistakes and get to the top based solely on their experience and expertise."
 	}
-]
+];
 
-
-//When button pushed display horoscpe info
-$("#reading-button").click(function(){
+//DISPLAYS HOROSCOPE READING WHEN INVOKED
+function displayReading(){
 	const userSign = $("input").val().toLowerCase();
 	const nameInfo = $("#sign-name");
 	const dateInfo = $("#sign-date");
@@ -80,12 +79,22 @@ $("#reading-button").click(function(){
 		}
 		
 	}
+	console.log("why is this invoking???")
 	if(userSign == ""){
 		return readingInfo.text("You didn't enter anything! Please try again");
 	}else{
 		return readingInfo.text("That's not a horoscope sign! Please try again");
 	}
-	
+}
 
+
+//When reading button pushed display horoscope info
+$("#reading-button").click(displayReading);
+
+//When Enter button pushed display horoscope info
+$("#user-input").keypress(function(e){
+	if(e.keyCode == 13) {
+		return displayReading();
+	}
 });
 
