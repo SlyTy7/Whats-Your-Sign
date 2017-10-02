@@ -26,6 +26,9 @@ button {
 	font-size: 26px;
 	font-weight: bold;
 	text-transform: uppercase;
+}
+
+.name p {
 	margin-bottom: 0;
 }
 

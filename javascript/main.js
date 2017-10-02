@@ -67,6 +67,8 @@ function displayReading(){
 	const nameInfo = $("#sign-name");
 	const dateInfo = $("#sign-date");
 	const readingInfo = $("#sign-reading");
+	//resets to default styling if its changed by having an empty input field
+	readingInfo.css({ 'color': '#212529', 'margin-top': '0px' });
 
 
 	for(var i=0; i < signs.length; i++){
@@ -79,19 +81,16 @@ function displayReading(){
 		}
 		
 	}
-	console.log("why is this invoking???")
+
+	//displays error message if input field is left blank or is an invalid entry
 	if(userSign == ""){
-		return readingInfo.text("You didn't enter anything! Please try again");
+		return [readingInfo.text("You didn't enter anything! Please try again"), readingInfo.css({ 'color': 'red', 'margin-top': '-50px' })];
 	}else{
-		return readingInfo.text("That's not a horoscope sign! Please try again");
+		return [readingInfo.text("That's not a horoscope sign! Please try again"), readingInfo.css({ 'color': 'red', 'margin-top': '-50px' })];
 	}
 }
 
-
-//When reading button pushed display horoscope info
 $("#reading-button").click(displayReading);
-
-//When Enter button pushed display horoscope info
 $("#user-input").keypress(function(e){
 	if(e.keyCode == 13) {
 		return displayReading();
