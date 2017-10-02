@@ -2,20 +2,35 @@ body {
 	text-align: center;
 }
 
+/*HEADING SECTION*/
 h1 {
 	margin-top: 75px;
 	font-size: 50px;
-}
+}/*END HEADING*/
 
+
+/*USER INPUT SECTION*/
 input {
 	margin: 25px auto;
-	width: 50%;
-	min-width: 250px;
 	text-align: center;
 }
 
+#user-input {
+	width: 50%;
+	min-width: 250px;
+}/*END INPUT*/
+
+
+/* SUBMIT BUTTON */
 button {
-	margin-bottom: 50px;
+	margin-bottom: 30px;
+}
+/*END SUBMIT*/
+
+
+/*READING SECTION*/
+.reading {
+	transition: ease all 1s;
 }
 
 .name, .date, .info {
@@ -36,3 +51,4 @@ button {
 	font-size: 12px;
 	font-style: italic;
 }
+/*END READING SECTION*/

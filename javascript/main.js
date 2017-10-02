@@ -67,8 +67,11 @@ function displayReading(){
 	const nameInfo = $("#sign-name");
 	const dateInfo = $("#sign-date");
 	const readingInfo = $("#sign-reading");
-	//resets to default styling if its changed by having an empty input field
+
+	//resets reading section to default styling
 	readingInfo.css({ 'color': '#212529', 'margin-top': '0px' });
+	nameInfo.text("");
+	dateInfo.text("");
 
 
 	for(var i=0; i < signs.length; i++){
@@ -84,9 +87,9 @@ function displayReading(){
 
 	//displays error message if input field is left blank or is an invalid entry
 	if(userSign == ""){
-		return [readingInfo.text("You didn't enter anything! Please try again"), readingInfo.css({ 'color': 'red', 'margin-top': '-50px' })];
+		return [readingInfo.text("You didn't enter anything! Please try again"), readingInfo.css({ 'color': 'red', 'margin-top': '-30px' })];
 	}else{
-		return [readingInfo.text("That's not a horoscope sign! Please try again"), readingInfo.css({ 'color': 'red', 'margin-top': '-50px' })];
+		return [readingInfo.text("That's not a horoscope sign! Please try again"), readingInfo.css({ 'color': 'red', 'margin-top': '-30px' })];
 	}
 }
 
