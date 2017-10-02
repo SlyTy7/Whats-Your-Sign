@@ -69,7 +69,7 @@ function displayReading(){
 	const readingInfo = $("#sign-reading");
 
 	//resets reading section to default styling
-	readingInfo.css({ 'color': '#212529', 'margin-top': '0px' });
+	readingInfo.css({ 'color': '#495057', 'margin-top': '0px' });
 	nameInfo.text("");
 	dateInfo.text("");
 
@@ -80,6 +80,7 @@ function displayReading(){
 		const currentHoro = signs[i].horoscope;
 
 		if(userSign == currentSign){
+			$(".reading").css({'display': 'block'})
 			return [nameInfo.text(currentSign), dateInfo.text(currentDate), readingInfo.text(currentHoro)];
 		}
 		
@@ -87,11 +88,13 @@ function displayReading(){
 
 	//displays error message if input field is left blank or is an invalid entry
 	if(userSign == ""){
-		return [readingInfo.text("You didn't enter anything! Please try again"), readingInfo.css({ 'color': 'red', 'margin-top': '-30px' })];
+		return [readingInfo.text("You didn't enter anything! Please try again"), readingInfo.css({ 'color': 'red', 'font-weight': 'bold', 'margin-top': '-30px' })];
 	}else{
-		return [readingInfo.text("That's not a horoscope sign! Please try again"), readingInfo.css({ 'color': 'red', 'margin-top': '-30px' })];
+		return [readingInfo.text("That's not a horoscope sign! Please try again"), readingInfo.css({ 'color': 'red', 'font-weight': 'bold', 'margin-top': '-30px' })];
 	}
 }
+
+$(".reading").css({'display': 'none'});
 
 $("#reading-button").click(displayReading);
 $("#user-input").keypress(function(e){
