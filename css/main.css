@@ -38,22 +38,35 @@ button {
 
 /*READING SECTION*/
 .reading {
-	transition: ease all 1s;
 	background-color: white;
-    color: #495057;
+    color: #232629;
+    width: 75%;
+    margin: 0 auto;
+    border-radius: 7px;
+    padding: 20px 0px;
+    box-shadow: 3px 3px 2px 0px #171717;
+    display: none;
+}
+
+.error {
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
     width: 75%;
     margin: 0 auto;
     border-radius: 7px;
     padding: 15px;
-    box-shadow: 3px 3px 2px 0px #171717;
+    display: block;
+    background-color: rgba(0, 0, 0, 0);
+    box-shadow: none;
 }
 
 .name, .date, .info {
 	margin: 0 auto;
 }
 
-.name {
-	font-size: 26px;
+#sign-name {
+	font-size: 20px;
 	font-weight: bold;
 	text-transform: uppercase;
 }

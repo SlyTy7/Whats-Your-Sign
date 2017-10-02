@@ -63,13 +63,13 @@ const signs = [
 
 //DISPLAYS HOROSCOPE READING WHEN INVOKED
 function displayReading(){
-	const userSign = $("input").val().toLowerCase();
+	const userInput = $("input").val().toLowerCase();
 	const nameInfo = $("#sign-name");
 	const dateInfo = $("#sign-date");
 	const readingInfo = $("#sign-reading");
 
 	//resets reading section to default styling
-	readingInfo.css({ 'color': '#495057', 'margin-top': '0px' });
+	$(".reading").removeClass("error");
 	nameInfo.text("");
 	dateInfo.text("");
 
@@ -79,22 +79,24 @@ function displayReading(){
 		const currentDate = signs[i].range;
 		const currentHoro = signs[i].horoscope;
 
-		if(userSign == currentSign){
-			$(".reading").css({'display': 'block'})
+		if(userInput == currentSign){
+			$(".reading").css({'display': 'block'});
 			return [nameInfo.text(currentSign), dateInfo.text(currentDate), readingInfo.text(currentHoro)];
 		}
 		
 	}
 
 	//displays error message if input field is left blank or is an invalid entry
-	if(userSign == ""){
-		return [readingInfo.text("You didn't enter anything! Please try again"), readingInfo.css({ 'color': 'red', 'font-weight': 'bold', 'margin-top': '-30px' })];
+	if(userInput == ""){
+		$(".reading").addClass("error");
+		return readingInfo.text("You didn't enter anything! Please try again.");
 	}else{
-		return [readingInfo.text("That's not a horoscope sign! Please try again"), readingInfo.css({ 'color': 'red', 'font-weight': 'bold', 'margin-top': '-30px' })];
+		$(".reading").addClass("error");
+		return readingInfo.text("That's not a horoscope sign! Please try again.");
 	}
 }
 
-$(".reading").css({'display': 'none'});
+/*$(".reading").css({'display': 'none'});*/
 
 $("#reading-button").click(displayReading);
 $("#user-input").keypress(function(e){
