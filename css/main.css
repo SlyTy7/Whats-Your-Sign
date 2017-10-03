@@ -43,10 +43,17 @@ button {
     color: #232629;
     width: 65%;
     margin: 0 auto;
+    margin-bottom: 30px;
     border-radius: 7px;
     padding: 20px 0px;
     box-shadow: 3px 3px 2px 0px #171717;
     display: block;
+}
+
+@media only screen and (max-width:900px) { 
+	.reading {
+		width: 80%;
+	}
 }
 
 .error {
