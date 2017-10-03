@@ -80,4 +80,8 @@ button {
 .info {
 	text-align: justify-all;
 }
+
+#sign-reading {
+	margin-bottom: 10px;
+}
 /*END READING SECTION*/
