@@ -47,15 +47,3 @@ $("#user-input").keypress(function(e){
 		return displayReading();
 	}
 });
-
-/*
-$(document).ready(function(){
-	$.ajax({
-		type: 'GET',
-		url: 'https://cors-anywhere.herokuapp.com/http://horoscope-api.herokuapp.com/horoscope/today/leo',
-		success: function(data){
-			console.log(data);
-		}
-	});
-});
-*/
