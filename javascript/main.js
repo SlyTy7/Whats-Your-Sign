@@ -11,17 +11,25 @@ function displayReading(){
 
 	//resets reading section to default styling
 	nameInfo.text("");
+	dateInfo.text("");
 	
 
 	const todayReading = 'https://cors-anywhere.herokuapp.com/http://horoscope-api.herokuapp.com/horoscope/today/' + userInput;
 	$.getJSON(todayReading, function(data){
+		const day = data.date.slice(0, 2);
+		const month = data.date.slice(3,5);
+		const year = data.date.slice(6, 10);
+		const date = month + "/" + day + "/" + year;
 		const name = data.sunsign;
 		const reading = data.horoscope.slice(12, -19);
+
+		console.log(date);
 
 
 		$(".reading").css({'display': 'block'});
 		$(".reading").removeClass('error');
 		nameInfo.text(name);
+		dateInfo.text(date);
 		readingInfo.html(reading);
 	})
 	.fail(function() {
