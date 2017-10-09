@@ -23,9 +23,6 @@ function displayReading(){
 		const name = data.sunsign;
 		const reading = data.horoscope.slice(12, -19);
 
-		console.log(date);
-
-
 		$(".reading").css({'display': 'block'});
 		$(".reading").removeClass('error');
 		nameInfo.text(name);
