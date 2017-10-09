@@ -12,6 +12,7 @@ h1 {
 	margin-top: 125px;
 	font-size: 50px;
 	font-weight: bold;
+	text-shadow: 3px 3px 2px #171717;
 }/*END HEADING*/
 
 
@@ -25,6 +26,11 @@ input {
 	width: 50%;
 	min-width: 250px;
 	box-shadow: 3px 3px 2px 0px #171717;
+}
+
+.form-control:focus {
+	border-color: #cc80ff;
+}
 }/*END INPUT*/
 
 
@@ -32,6 +38,20 @@ input {
 button {
 	margin-bottom: 30px;
 	box-shadow: 3px 3px 2px 0px #171717;
+}
+
+.btn-primary {
+	background-color: #8a07b3;
+	border-color: #8a07b3;
+}
+
+.btn-primary:hover {
+	background-color: #9d63ab;
+	border-color: #9d63ab;
+}
+
+.btn-primary:focus {
+	box-shadow: 0 0 0 3px rgba(224, 0, 255, 0.5);
 }
 /*END SUBMIT*/
 
